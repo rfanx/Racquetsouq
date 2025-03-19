@@ -1,0 +1,3 @@
+# mentionig files are ingored from git, it doesn't add.
+.env
+node_modules
