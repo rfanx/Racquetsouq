@@ -1,0 +1,277 @@
+/* Ensure header and footer do not overlap */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1; /* Allows content to take full space while keeping header and footer intact */
+    padding-top: 80px; /* Adjust based on header height */
+    padding-bottom: 50px; /* Adjust based on footer height */
+}
+
+.signup-container {
+    display: flex;
+    max-width: 1200px;
+    margin: auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 2rem;
+}
+
+.signup-form-container {
+    flex: 1;
+}
+
+.signup-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Responsive Fix */
+@media (max-width: 768px) {
+    .signup-container {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .signup-image {
+        display: none;
+    }
+}
+
+
+.signup-form-container h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.login-link {
+    margin-bottom: 2rem;
+    color: #666;
+}
+.signup-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 2rem auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.signup-form-container {
+    flex: 1;
+    padding: 2rem;
+}
+
+.signup-image {
+    flex: 1;
+    position: relative;
+}
+
+.signup-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.signup-form-container h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.login-link {
+    margin-bottom: 2rem;
+    color: #666;
+}
+
+.login-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s, background 0.3s;
+    background: white; /* Ensure background is visible */
+}
+
+.form-group label {
+    position: absolute;
+    left: 0.8rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    transition: all 0.3s;
+    pointer-events: none;
+    background: white; /* Ensure label background is visible */
+    padding: 0 4px;
+}
+
+/* Ensure label moves up when input is filled */
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label {
+    top: -0.5rem;
+    left: 0.5rem;
+    font-size: 0.8rem;
+    background: white;
+    padding: 0 4px;
+}
+
+
+.toggle-password {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #666;
+}
+
+.terms-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.terms-checkbox label {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.create-account-btn {
+    width: 100%;
+    padding: 1rem;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.create-account-btn:hover {
+    background: #222;
+}
+
+@media (max-width: 768px) {
+    .signup-container {
+        flex-direction: column;
+        margin: 1rem;
+    }
+
+    .signup-image {
+        display: none;
+    }
+}
+
+.login-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group label {
+    position: absolute;
+    left: 0.8rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    transition: all 0.3s;
+    pointer-events: none;
+}
+
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label {
+    top: -0.5rem;
+    left: 0.5rem;
+    font-size: 0.8rem;
+    background: white;
+    padding: 0 0.3rem;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #666;
+}
+
+.terms-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.terms-checkbox label {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.create-account-btn {
+    width: 100%;
+    padding: 1rem;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.create-account-btn:hover {
+    background: #222;
+}
+
+@media (max-width: 768px) {
+    .signup-container {
+        flex-direction: column;
+        margin: 1rem;
+    }
+
+    .signup-image {
+        display: none;
+    }
+}
