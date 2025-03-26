@@ -20,19 +20,27 @@ const loadSignuppage = async (req,res) => {
 }
 
 const signup = async (req,res) => {
-    const {name,email,phone,password} = req.body;
     try {
-        const newUser = new User({name,email,phone,password});
-        console.log(newUser);
+        console.log('Recived data:', req.body);
+
+        const {firstName,lastName,email,phone,password} = req.body;
+        
+        const existingUser = await User.findOne({ email });
+        if(existingUser) {
+            return res.status(400).json({message: 'Email already exists'});
+        }
+
+        const newUser = new User({firstName,lastName,email,phone,password});
 
         await newUser.save();
-        return res.redirect('/signup');
+        console.log('User saved successfully', newUser);
+
+        return res.json({ success: true, message: 'Signup successful'});
 
     } catch (error) {
         console.error("Error for save user",error);
-        res.status(500).send('Internal server error');
     }
-}
+};
 
 const loadLoginpage = async (req,res) => {
     try {
@@ -41,6 +49,10 @@ const loadLoginpage = async (req,res) => {
         console.log('User login page not found');
         res.status(500).send('Server not found')
     }
+}
+
+const login = async (req,res) => {
+    
 }
 
 module.exports = {
